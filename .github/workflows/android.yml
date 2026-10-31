@@ -19,7 +19,9 @@ jobs:
         working-directory: mirage-native
       - run: npx cap add android
         working-directory: mirage-native
-      - run: npx capacitor-assets generate --android --iconBackgroundColor '#0e0f12' --iconBackgroundColorDark '#0e0f12'
+      - run: convert -size 1024x1024 xc:'#0e0f12' assets/icon-background.png
+        working-directory: mirage-native
+      - run: npx capacitor-assets generate --android
         working-directory: mirage-native
       - run: npx cap sync android
         working-directory: mirage-native
